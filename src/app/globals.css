@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+/* Nestora tokens — from the Figma "Color tokens" board (light): warm neutrals with ink actions; amber marks
+   location and selection; red is reserved for favorites and errors. */
+:root {
+  --bg: #eeedeb;
+  --surface: #ffffff;
+  --surface-muted: #f5f4f2;
+  --ink: #121212;
+  --ink-soft: #2a2a29;
+  --border: #e3e1dd;
+  --border-strong: #c9c6c1;
+  --text: #121212;
+  --text-secondary: #6b6966;
+  --text-muted: #a29f9a;
+  --on-ink: #ffffff;
+  --disabled: #e1dfdb;
+  --disabled-text: #a9a6a1;
+  --amber: #e3a23b;
+  --amber-soft: #fbf0dc;
+  --heart: #e5484d;
+  --success: #1f9d55;
+  --success-soft: #e3f4ea;
+  --warning: #d98a00;
+  --warning-soft: #fff2d6;
+  --error: #d93a3f;
+  --error-soft: #fceaea;
+  --info: #2f6bde;
+  --info-soft: #e8effc;
+  --neutral-soft: #efeeec;
+  --map: #e9e8e5;
+  --map-road: #ffffff;
+  --map-block: #deddd9;
+  --map-park: #dce7d6;
+  --map-water: #d6e4ee;
+  --scrim: rgba(18, 18, 18, 0.45);
+  --shadow-nav: 0 8px 28px rgba(18, 18, 18, 0.1);
+  --shadow-toast: 0 12px 28px rgba(18, 18, 18, 0.22);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-on-ink: var(--on-ink);
+  --color-disabled: var(--disabled);
+  --color-disabled-text: var(--disabled-text);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-heart: var(--heart);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-error: var(--error);
+  --color-error-soft: var(--error-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-neutral-soft: var(--neutral-soft);
+  --color-map: var(--map);
+  --color-map-road: var(--map-road);
+  --color-map-block: var(--map-block);
+  --color-map-park: var(--map-park);
+  --color-map-water: var(--map-water);
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+html { background: var(--bg); }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Type scale — Nestora/* text styles (DM Sans). */
+.t-display { font-size: 34px; line-height: 40px; font-weight: 500; letter-spacing: -0.02em; }
+.t-greeting { font-size: 30px; line-height: 36px; font-weight: 300; font-style: italic; letter-spacing: -0.01em; }
+.t-title-xl { font-size: 28px; line-height: 34px; font-weight: 500; letter-spacing: -0.015em; }
+.t-title-l { font-size: 22px; line-height: 28px; font-weight: 500; letter-spacing: -0.01em; }
+.t-screen-title { font-size: 17px; line-height: 22px; font-weight: 500; }
+.t-section { font-size: 17px; line-height: 22px; font-weight: 600; }
+.t-property { font-size: 17px; line-height: 22px; font-weight: 500; }
+.t-card-title { font-size: 15px; line-height: 20px; font-weight: 600; }
+.t-item { font-size: 14px; line-height: 20px; font-weight: 500; }
+.t-body { font-size: 14px; line-height: 21px; font-weight: 400; }
+.t-body-m { font-size: 14px; line-height: 20px; font-weight: 500; }
+.t-label { font-size: 13px; line-height: 18px; font-weight: 500; }
+.t-caption { font-size: 12px; line-height: 16px; font-weight: 400; }
+.t-caption-m { font-size: 12px; line-height: 16px; font-weight: 500; }
+.t-price-l { font-size: 26px; line-height: 32px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.t-price { font-size: 20px; line-height: 26px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.t-price-s { font-size: 15px; line-height: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.t-button { font-size: 15px; line-height: 20px; font-weight: 500; }
+.t-button-s { font-size: 13px; line-height: 16px; font-weight: 500; }
+.t-status { font-size: 11px; line-height: 14px; font-weight: 600; }
+.t-error { font-size: 12px; line-height: 16px; font-weight: 500; }
+.t-nav { font-size: 10px; line-height: 12px; font-weight: 500; }
+.num { font-variant-numeric: tabular-nums; }
+.photo { object-fit: cover; }
+
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+@keyframes sheet-in { from { transform: translateY(100%); } to { transform: none; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes toast-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 50% { opacity: 0.5; } }
+.anim-sheet { animation: sheet-in 0.24s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.anim-fade { animation: fade-in 0.18s ease-out; }
+.anim-toast { animation: toast-in 0.2s ease-out; }
+.anim-spin { animation: spin 0.8s linear infinite; }
+.skeleton { background: var(--surface-muted); animation: pulse 1.4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
